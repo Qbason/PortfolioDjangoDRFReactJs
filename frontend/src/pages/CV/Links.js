@@ -1,27 +1,27 @@
 import React from 'react'
+import {VscGithub} from "react-icons/vsc";
+import { BsLinkedin } from "react-icons/bs";
+import { TfiMicrosoftAlt } from "react-icons/tfi";
 
 function Links({specificContent}) {
   return (
     <>
         <div className="col-4">
 
-            <a className="btn btn-dark"
-                href={specificContent.links.github}>GitHub<i
-                    className="bi bi-github"></i></a>
+            <a className="btn btn-dark p-3"
+                href={specificContent.links.github}><VscGithub/></a>
             </div>
 
             <div className="col-4">
 
-            <a className="btn btn-dark"
-                href={specificContent.links.microsoft}>Microsoft<i
-                    className="bi bi-microsoft"></i></a>
+            <a className="btn btn-dark p-3"
+                href={specificContent.links.microsoft}><TfiMicrosoftAlt/></a>
             </div>
 
             <div className="col-4">
 
-            <a className="btn btn-dark"
-                href={specificContent.links.linkedin}>Linkedin<i
-                    className="bi bi-linkedin"></i></a>
+            <a className="btn btn-dark p-3"
+                href={specificContent.links.linkedin}><BsLinkedin/></a>
         </div>
 
     </>

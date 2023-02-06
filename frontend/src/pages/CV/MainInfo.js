@@ -15,7 +15,7 @@ function MainInfo({specificContent}) {
             {specificContent.telephone_text} <b> +48 500 471 619 </b>
         </h5>
         <h5>
-            {specificContent.date_of_birth}<b> 02/23/1999 </b>
+            {specificContent.date_of_birth}<b> 23/02/1999 </b>
         </h5>
         <h5>
             {specificContent.town}:<b> Kaczyce </b>

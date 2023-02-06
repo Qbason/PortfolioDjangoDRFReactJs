@@ -7,6 +7,10 @@ import Skills from "./Skills"
 import TraCouCert from "./TraCouCert"
 import mecv from "./me_cv.webp"
 import React from "react"
+import cv_pdf from "./eng_cv_Jakub_Kościelny.pdf"
+
+import {GrDocumentPdf} from "react-icons/gr";
+
 
 function CV({getSpecificContent,languagePage}){
 
@@ -117,7 +121,18 @@ function CV({getSpecificContent,languagePage}){
                                             <div className="row p-4 text-center">
                                                 <Links specificContent={pageContent.content}/>
                                             </div>
-                                            {/* <! - consent to data processing -> */}
+                                            <div className="row mb-4 disapear">
+                                                <div className="col-12 text-center border-bottom fw-bold mt-4">
+                                                    <h4> CV PDF </h4>
+                                                </div>
+                                            </div>
+                                            <div className="row p-4 text-center">
+                                                <div className="col-4"></div>
+                                                <div className="col-4">
+                                                        <a target="_blank" rel="noreferrer" className="btn btn-danger p-3" href={cv_pdf}><GrDocumentPdf/></a>
+                                                </div>
+                                                <div className="col-4"></div>
+                                            </div>
             </div>
         </div>
     </div>

@@ -40,4 +40,4 @@ const Footer = ({pageContent}) => {
     )
 };
 
-export default Footer;
+export default memo(Footer);

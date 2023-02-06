@@ -44,12 +44,15 @@ function Header({setLanguagePage,pageContent}){
 
 
                         </div>
-                        <div id="czas" className="text-light ms-auto me-3">
-                            <Time />
-                        </div>
-                        <div className="me-lg-0 me-sm-5">
-                            <button className="me-1 btn btn-light" style={PLFlagStyle} onClick={()=>changeLanguage("pl")}>PL</button>
-                            <button className="btn btn-light" onClick={()=>changeLanguage("en")}>ENG</button>
+                        <div className="navbar-nav ms-auto me-lg-3">
+                            <div className="text-light nav-link mb-auto mt-auto">
+                                <Time />
+                            </div>
+                            <div className='nav-link'>
+                                <button className="me-1 btn btn-light" style={PLFlagStyle} onClick={()=>changeLanguage("pl")}>PL</button>
+                                <button className="btn btn-light" onClick={()=>changeLanguage("en")}>ENG</button>
+                            </div>
+
                         </div>
 
                     </div>

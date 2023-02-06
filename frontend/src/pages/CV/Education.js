@@ -10,7 +10,7 @@ function Education({specificContent}) {
         (element)=>{
 
             return (
-                <li className="list-group-item d-flex justify-content-between align-items-start mb-3" key={element.where+element.period}>
+                <li className="list-group-item d-flex justify-content-between align-items-start mb-3 border-top" key={element.where+element.period}>
         
                 <div className="ms-2 me-auto">
                     <div className="fs-6">{element.period}</div>
