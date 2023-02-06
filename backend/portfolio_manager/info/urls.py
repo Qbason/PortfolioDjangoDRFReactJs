@@ -9,6 +9,10 @@ router.register(
     r'contentwebpage',
     views.ContentWebPageViewSet
 )
+router.register(
+    r'contentwebpagemanagement',
+    views.ContentWebPageManagementViewSet
+)
 
 urlpatterns = [
     path("api/",include(router.urls)),

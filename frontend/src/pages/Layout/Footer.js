@@ -10,7 +10,7 @@ const Footer = ({pageContent}) => {
                 <p className="text-muted ">
                 {pageContent&&pageContent.content.who_made_page}
                 </p>
-                <p>©Copyright 2022</p>
+                <p>©Copyright 2023</p>
             </div>
 
             <div className="col-4 text-center">
@@ -32,7 +32,6 @@ const Footer = ({pageContent}) => {
                 <ul className="nav flex-column">
                     <li className="nav-item mb-2">Jakub Kościelny</li>
                     <li className="nav-item mb-2">43-417 Kaczyce</li>
-                    <li className="nav-item mb-2">Dworkowa 12</li>
                 </ul>
             </div>
 

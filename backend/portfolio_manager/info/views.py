@@ -21,4 +21,11 @@ class ContentWebPageViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 
-
+class ContentWebPageManagementViewSet(viewsets.ModelViewSet):
+    queryset = ContentWebPage.objects.all()
+    serializer_class = ContentWebPageSerializer
+    filter_backends = [DjangoFilterBackend,OrderingFilter]
+    filterset_fields = ['id','name','language']
+    ordering_fields = ['id','name','language']
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
