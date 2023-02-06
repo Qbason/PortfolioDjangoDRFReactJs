@@ -1,2 +1,3 @@
 generator_lets_encrypt/certbot
 generator_lets_encrypt/certbot/*
+frontend/build/
