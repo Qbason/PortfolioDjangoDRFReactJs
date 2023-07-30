@@ -29,13 +29,8 @@ RUN python3 -m venv myenv_linux
 #copy code and configuration
 COPY ./backend/portfolio_manager /code/portfolio_manager
 RUN source /code/myenv_linux/bin/activate && pip install -r requirements.txt && pip install ptvsd
-#copy our certs for https!
-COPY ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/cert.pem /etc/letsencrypt/live/jakubk.pl/cert.pem
-COPY ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/fullchain.pem /etc/letsencrypt/live/jakubk.pl/fullchain.pem
-COPY ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/privkey.pem /etc/letsencrypt/live/jakubk.pl/privkey.pem
 #COPY http.conf
 ADD ./backend/http.conf /etc/apache2/sites-available/http.conf
-ADD ./backend/ports.conf /etc/apache2/ports.conf
 #enable site-available
 RUN a2ensite http.conf
 #enable needed mod
@@ -47,9 +42,8 @@ RUN a2enmod mpm_prefork
 RUN a2enmod authz_groupfile
 RUN a2enmod headers
 RUN a2enmod rewrite
-RUN a2enmod ssl
 #start service reload and stop
 RUN service apache2 start && service apache2 reload && service apache2 stop
 # EXPOSE 80 443
 #to run if we don't need to command in docker-compose
-# CMD ["apache2ctl", "-D", "FOREGROUND"]
+CMD ["apache2ctl", "-D", "FOREGROUND"]

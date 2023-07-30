@@ -29,12 +29,7 @@ from portfolio_manager.secret import SECRET_KEY
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "192.168.1.30",
-    "127.0.0.1",
-    "192.168.1.1",
-    "jakubk.pl",
-    "78.157.187.16",
-    "192.168.1.223"
+    "*"
 ]
 
 
@@ -136,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_URL = '/static/'
+STATIC_URL = '/api/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'assets'),

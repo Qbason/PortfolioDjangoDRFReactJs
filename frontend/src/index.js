@@ -33,7 +33,7 @@ export default function App() {
   const getContent = React.useCallback(async (page)=>{
 
 
-    const url = "https://jakubk.pl:444/api/contentwebpage/?"+new URLSearchParams(
+    const url = `/api/contentwebpage/?`+new URLSearchParams(
         {
           "language":languagePage,
           "name":page

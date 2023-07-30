@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c2cab247.css",
-    "main.js": "/static/js/main.31403f2c.js",
+    "main.js": "/static/js/main.80b3945d.js",
     "static/media/eng_cv_Jakub_Kościelny.pdf": "/static/media/eng_cv_Jakub_Kościelny.1f6a6f8166cb01ad7868.pdf",
     "static/media/me_cv.webp": "/static/media/me_cv.3851d2f2209654523cd1.webp",
     "static/media/email.webp": "/static/media/email.24394813b49bc7a5c929.webp",
@@ -10,10 +10,10 @@
     "static/media/ikona_jk3_w_b.ico": "/static/media/ikona_jk3_w_b.5bcb700d0f8b7b09dd39.ico",
     "index.html": "/index.html",
     "main.c2cab247.css.map": "/static/css/main.c2cab247.css.map",
-    "main.31403f2c.js.map": "/static/js/main.31403f2c.js.map"
+    "main.80b3945d.js.map": "/static/js/main.80b3945d.js.map"
   },
   "entrypoints": [
     "static/css/main.c2cab247.css",
-    "static/js/main.31403f2c.js"
+    "static/js/main.80b3945d.js"
   ]
 }

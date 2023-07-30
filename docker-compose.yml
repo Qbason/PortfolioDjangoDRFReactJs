@@ -27,7 +27,7 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
       - PGADMIN_LISTEN_PORT=${PGADMIN_LISTEN_PORT}
     ports:
-      - "5050:8001"
+      - "8001:8001"
     networks:
       - mynetwork
   #web -> activate venv makemigrations migrate collectstatic then run apache2ctl
@@ -47,16 +47,10 @@ services:
     volumes:
       # copy our code to specific place to make changes in time 
       - ./backend/portfolio_manager:/code/portfolio_manager
-      # copy our certs https
-      - ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/cert.pem:/etc/letsencrypt/live/jakubk.pl/cert.pem
-      - ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/fullchain.pem:/etc/letsencrypt/live/jakubk.pl/fullchain.pem
-      - ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/privkey.pem:/etc/letsencrypt/live/jakubk.pl/privkey.pem
       - ./backend/http.conf:/etc/apache2/sites-available/http.conf
-      - ./backend/ports.conf:/etc/apache2/ports.conf
     
     ports: 
-      - "81:80"
-      - "444:443"
+      - "802:80"
     # for setting database: name, login, password 
     environment:
       - POSTGRES_DB=${POSTGRES_DB}
@@ -76,15 +70,9 @@ services:
     volumes:
       # copy our code to specific place to make changes in time 
       - ./frontend/build:/code/build
-      # copy our certs https
-      - ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/cert.pem:/etc/letsencrypt/live/jakubk.pl/cert.pem
-      - ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/fullchain.pem:/etc/letsencrypt/live/jakubk.pl/fullchain.pem
-      - ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/privkey.pem:/etc/letsencrypt/live/jakubk.pl/privkey.pem
       - ./frontend/http.conf:/etc/apache2/sites-available/http.conf
-      - ./frontend/ports.conf:/etc/apache2/ports.conf
     ports: 
-      - "80:80"
-      - "443:443"
+      - "801:80"
     depends_on:
       - web_backend
     networks:

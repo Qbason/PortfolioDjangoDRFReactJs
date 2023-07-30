@@ -13,13 +13,8 @@ RUN mkdir /code/
 WORKDIR /code/
 #copy code and configuration
 COPY ./frontend/build /code/build
-#copy our certs for https!
-COPY ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/cert.pem /etc/letsencrypt/live/jakubk.pl/cert.pem
-COPY ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/fullchain.pem /etc/letsencrypt/live/jakubk.pl/fullchain.pem
-COPY ./generator_lets_encrypt/certbot/etc/letsencrypt/live/jakubk.pl/privkey.pem /etc/letsencrypt/live/jakubk.pl/privkey.pem
 #COPY http.conf
 ADD ./frontend/http.conf /etc/apache2/sites-available/http.conf
-ADD ./frontend/ports.conf /etc/apache2/ports.conf
 #enable site-available
 RUN a2ensite http.conf
 #enable needed mod
@@ -31,7 +26,6 @@ RUN a2enmod mpm_prefork
 RUN a2enmod authz_groupfile
 RUN a2enmod headers
 RUN a2enmod rewrite
-RUN a2enmod ssl
 #start service reload and stop
 RUN service apache2 start && service apache2 reload && service apache2 stop
 # EXPOSE 80 443
